@@ -2,6 +2,12 @@ pipeline {
     agent any
     
 	stages {
+        stage ('Getting prerequisites'){
+            steps{
+                sh 'curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
+                sh 'sudo chmod +x /usr/local/bin/docker-compose'
+            }
+        }
         stage ('Building application image'){
             steps {
                 sh 'docker build -t aplic_java2 -f /home/brenomartins/Teste/Dockerfile .'
