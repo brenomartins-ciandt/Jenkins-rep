@@ -19,10 +19,10 @@ pipeline {
             }
         }
 
-        #stage ('Setting BD'){
-         #   steps{
-          #      sh 'psql    --host=localhost    --port=5555    --username=postgres    --password   --file acesso_init.sql'
-           # }
-        #}
+        stage ('Setting BD'){
+            steps{
+                sh 'psql    --host=localhost    --port=5555    --username=postgres    --password   --file acesso_init.sql'
+            }
+        }
     }
 }
