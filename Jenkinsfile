@@ -20,7 +20,7 @@ pipeline {
         }
         stage ('Compose Stage'){
             steps {
-                sh 'docker-compose down'
+                sh 'sevirce docker restart'
                 sh 'docker-compose up -d'
             }
         }
