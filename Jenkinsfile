@@ -15,12 +15,12 @@ pipeline {
         }
         stage ('Building application image'){
             steps {
-                sh 'docker build -t aplic_java2 .'
+                sh 'docker build -t aplic_java2 -f /home/brenomartins/Teste/Dockerfile .'
             }
         }
         stage ('Compose Stage'){
             steps {
-                sh 'docker-compose -d up'
+                sh 'docker-compose -d -f /home/brenomartins/Teste/docker-compose.yml up'
             }
         }
 
