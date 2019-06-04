@@ -20,7 +20,6 @@ pipeline {
         }
         stage ('Compose Stage'){
             steps {
-                sh 'service docker restart'
                 sh 'docker-compose up -d'
             }
         }
