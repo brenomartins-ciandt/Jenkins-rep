@@ -4,7 +4,7 @@ pipeline {
 	stages {
         stage ('Checkout'){
             steps {
-                git 'https://github.com/brenomartins-ciandt/Jenkins-rep'
+                git 'https://github.com/brenomartins-ciandt/Jenkins-rep.git'
             }
         }
         stage ('Getting prerequisites'){
@@ -15,12 +15,12 @@ pipeline {
         }
         stage ('Building application image'){
             steps {
-                sh 'docker build -t aplic_java2 -f /home/brenomartins/Teste/Dockerfile .'
+                sh 'docker build -t aplic_java2 -f Dockerfile .'
             }
         }
         stage ('Compose Stage'){
             steps {
-                sh 'docker-compose up -d'
+                sh 'docker-compose -f docker-compose.yml up -d'
             }
         }
 
