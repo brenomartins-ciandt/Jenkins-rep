@@ -5,14 +5,14 @@ services:
       image: aplic_java2
       networks:
          appnetwork:
-            ipv4_address: 172.38.1.1
+            ipv4_address: 172.28.1.1
       environment:
       - PORT=5555
       - DATASOURCE_USERNAME=postgres
       - DATASOURCE_PASSWORD=postgres
-      - HOST=172.38.1.2
+      - HOST=172.28.1.2
       - DBNAME=postgres
-      - DATASOURCE_URL=jdbc:postgresql://172.38.1.2:5432/postgres
+      - DATASOURCE_URL=jdbc:postgresql://172.28.1.2:5432/postgres
       ports:
       - "9094:9095"
       depends_on:
@@ -22,7 +22,7 @@ services:
       image: postgres
       networks:
          appnetwork:
-            ipv4_address: 172.38.1.2
+            ipv4_address: 172.28.1.2
       environment:
       - POSTGRES_PASSWORD=postgres
       ports:
@@ -33,4 +33,4 @@ networks:
       ipam:
          driver: default
          config:
-            - subnet: 172.38.0.0/16
+            - subnet: 172.28.0.0/16
