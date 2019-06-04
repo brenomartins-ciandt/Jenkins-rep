@@ -20,7 +20,7 @@ pipeline {
         }
         stage ('Compose Stage'){
             steps {
-                sh 'docker-compose -f /home/brenomartins/Teste/docker-compose.yml up'
+                sh 'docker-compose -f -d /home/brenomartins/Teste/docker-compose.yml up'
             }
         }
 
