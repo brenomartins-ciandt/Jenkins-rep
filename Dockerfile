@@ -2,7 +2,6 @@ FROM anapsix/alpine-java
 
 COPY acesso.jar .
 COPY acesso_init.sql .
-COPY docker-compose.yml .
 
 ENV PORT=5555
 ENV DATASOURCE_USERNAME=postgres
