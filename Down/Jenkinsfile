@@ -9,6 +9,8 @@ pipeline {
         }
         stage ('Compose Stage'){
             steps {
+                sh 'docker network disconnect appnetwork1 application-up_aplication_1'
+                sh 'docker network disconnect appnetwork1 application-up_bd-postgres_1'
                 sh 'docker-compose -f docker-compose.yml down'
             }
         }
