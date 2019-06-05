@@ -30,6 +30,7 @@ services:
 
 networks:
    appnetwork:
+      name: appnetwork
       ipam:
          driver: default
          config:
