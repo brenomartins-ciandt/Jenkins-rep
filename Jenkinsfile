@@ -28,7 +28,7 @@ pipeline {
             steps {
                 withCredentials ([string(credentialsId: 'senha', variable: 'SENHA')]){
                     sh '''
-                    sudo PGPASSWORD=$SENHA
+                    sudo export PGPASSWORD=$SENHA
                     echo Senha = $PGPASSWORD
                     sudo psql    --host=localhost    --port=5555    --username=postgres -w --no-password  --file acesso_init.sql
                     '''
