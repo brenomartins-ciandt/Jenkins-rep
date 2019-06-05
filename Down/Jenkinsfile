@@ -9,8 +9,6 @@ pipeline {
         }
         stage ('Compose Stage'){
             steps {
-                sh 'docker stop application-up_aplication_1 application-up_bd-postgres_1'
-                sh 'docker rm application-up_aplication_1 application-up_bd-postgres_1'
                 sh 'docker-compose -f docker-compose.yml down'
             }
         }
