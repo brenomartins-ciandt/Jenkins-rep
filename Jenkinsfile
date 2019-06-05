@@ -26,7 +26,7 @@ pipeline {
 
         stage ('Setting BD'){
             steps {
-                withCredentials ([credentialsId: 'senha', variable: 'SENHA'])
+                withCredentials ([string(credentialsId: 'senha', variable: 'SENHA')])
                 sh 'psql    --host=localhost    --port=5555    --username=postgres    --password=$SENHA   --file acesso_init.sql'
 
             }
