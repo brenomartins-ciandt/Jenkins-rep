@@ -9,7 +9,7 @@ pipeline {
         }
         stage ('Compose Stage'){
             steps {
-                sh 'docker-compose -f docker-compose.yml --force down'
+                sh 'docker-compose -f docker-compose.yml down --force'
             }
         }
     }
