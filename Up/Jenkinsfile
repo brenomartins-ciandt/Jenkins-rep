@@ -32,10 +32,5 @@ pipeline {
                 }
             }
         }
-        stage ('Compose Down Stage'){
-            steps {
-                sh 'docker-compose -f docker-compose.yml down'
-            }
-        }
     }
 }

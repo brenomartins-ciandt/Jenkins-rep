@@ -11,7 +11,9 @@ pipeline {
             steps {
                 sh 'docker network disconnect -f appnetwork application-up_aplication_1'
                 sh 'docker network disconnect -f appnetwork application-up_bd-postgres_1'
-                sh 'docker-compose -f docker-compose.yml down'
+                sh 'docker network rm appnetwork'
+                sh 'docker stop application-up_aplication_1 application-up_bd-postgres_1'
+                sh 'docker rm application-up_aplication_1 application-up_bd-postgres_1'
             }
         }
     }
