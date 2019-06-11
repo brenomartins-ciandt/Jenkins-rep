@@ -19,8 +19,8 @@ pipeline {
         }
         stage ('Compose Up Stage'){
             steps {
-                sh 'chmod +x docker-compose.yml' 
-                sh 'docker-compose -f docker-compose.yml up -d'
+                sh 'sudo chmod +x docker-compose.yml' 
+                sh 'sudo docker-compose -f docker-compose.yml up -d'
                 sleep(5)
             }
         }
