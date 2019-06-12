@@ -14,9 +14,6 @@ pipeline {
             }
         }
         stage ('Compose Up Stage'){                
-            input {
-                message "Mensagem"
-            }
             steps {
                 sh 'chmod 777 docker-compose.yml' 
                 sh 'docker-compose up -d'
