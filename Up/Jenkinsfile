@@ -4,18 +4,18 @@ pipeline {
 	stages {
         stage ('Getting prerequisites'){
             steps {
-                sh 'sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
+                sh 'curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
             }
         }
         stage ('Building application image'){
             steps {
-                sh 'sudo docker build -t aplic_java2 -f Dockerfile .'
+                sh 'docker build -t aplic_java2 -f Dockerfile .'
             }
         }
         stage ('Compose Up Stage'){
             steps {
-                sh 'sudo chmod 777 docker-compose.yml' 
-                sh 'sudo docker-compose -f docker-compose.yml up -d'
+                sh 'chmod 777 docker-compose.yml' 
+                sh 'docker-compose -f docker-compose.yml up -d'
                 sleep(5)
             }
         }
