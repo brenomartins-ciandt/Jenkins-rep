@@ -17,6 +17,7 @@ pipeline {
             steps {
                 
                 input {
+                    message{"Mensagem"}
                     sh 'chmod 777 docker-compose.yml' 
                 }
                 input {
