@@ -13,17 +13,15 @@ pipeline {
 
             }
         }
-        stage ('Compose Up Stage'){
+        stage ('Compose Up Stage'){                
+            input {
+                message "Mensagem"
+            }
             steps {
-                
-                input {
-                    message{"Mensagem"}
-                    sh 'chmod 777 docker-compose.yml' 
-                }
-                input {
-                    sh 'docker-compose -f docker-compose.yml up -d'
-                    sleep(5)
-                }
+                sh 'chmod 777 docker-compose.yml' 
+            
+                sh 'docker-compose -f docker-compose.yml up -d'
+                sleep(5)
             }
         }
         stage ('Setting BD'){
