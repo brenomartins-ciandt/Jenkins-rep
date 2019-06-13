@@ -11,7 +11,7 @@ pipeline {
         }
         stage ('Building application image'){
             steps {
-                sh 'ls'
+                sh 'pwd'
                 sh 'docker build -t aplic_java2 -f /home/brenomartins/Teste/Dockerfile .'
 
             }
