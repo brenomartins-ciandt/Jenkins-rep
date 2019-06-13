@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    
 	stages {
         stage ('Getting prerequisites'){
             steps {
@@ -14,7 +13,7 @@ pipeline {
         stage ('Building application image'){
             steps {
                 sh 'pwd'
-                sh 'docker build -t aplic_java2 -f /var/jenkins_home/workspace/Aplication-Up/Dockerfile .'
+                sh 'docker build -t aplic_java2 -f https://github.com/brenomartins-ciandt/Jenkins-rep/blob/master/Dockerfile .'
 
             }
         }
