@@ -15,8 +15,6 @@ pipeline {
                     && tar xzvf docker-17.04.0-ce.tgz \
                     && mv docker/docker /usr/local/bin \
                     && rm -r docker docker-17.04.0-ce.tgz'
-                sh 'docker service stop'
-                sh 'docker service start'
                 sh 'pwd'
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
