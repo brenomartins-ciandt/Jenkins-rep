@@ -16,7 +16,6 @@ pipeline {
         stage ('Building application image'){
             steps {
                 sh 'pwd'
-                sh 'gpasswd -a jenkins docker'
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
             }
