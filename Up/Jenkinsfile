@@ -12,7 +12,7 @@ pipeline {
         stage ('Building application image'){
             steps {
                 sh 'pwd'
-                sh 'docker build -t aplic_java2 -f /home/brenomartins/Teste/Dockerfile .'
+                sh 'docker build -t aplic_java2 -f /var/jenkins_home/workspace/Aplication-Up/Dockerfile .'
 
             }
         }
