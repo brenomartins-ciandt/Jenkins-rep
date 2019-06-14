@@ -19,9 +19,7 @@ pipeline {
                 sh 'pwd'
                 sh 'ls'
                 sh 'whoami'
-                sh 'systemctl daemon-reload'
-                sh 'systemctl restart docker'
-                sh 'service docker restart'
+                sh 'echo $USER'
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
             }
