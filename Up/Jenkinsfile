@@ -19,7 +19,6 @@ pipeline {
                 sh 'pwd'
                 sh 'ls'
                 sh 'whoami'
-                sh 'usermod -aG docker jenkins'
                 sh 'systemctl daemon-reload'
                 sh 'systemctl restart docker'
                 sh 'service docker restart'
