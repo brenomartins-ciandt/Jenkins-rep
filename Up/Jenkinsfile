@@ -10,7 +10,6 @@ pipeline {
                 sh 'curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-17.04.0-ce.tgz \
                     && tar xzvf docker-17.04.0-ce.tgz \
                     && rm -r docker docker-17.04.0-ce.tgz'
-                sh 'chmod 777 /usr/local/bin/docker'
             }
         }
         stage ('Building application image'){
@@ -19,7 +18,6 @@ pipeline {
                 sh 'ls'
                 sh 'whoami'
                 sh 'echo $USER'
-                sh 'gpasswd -a root docker'
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
             }
