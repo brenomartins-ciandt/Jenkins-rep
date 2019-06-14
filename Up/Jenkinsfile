@@ -19,7 +19,11 @@ pipeline {
                 sh 'ls'
                 sh 'whoami'
                 sh 'echo $USER'
+                sh 'read -p docker' 
+                if grep -q $docker /etc/group
+                then
                 sh 'groupadd docker'
+                fi
                 sh 'gpasswd -a root docker'
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
