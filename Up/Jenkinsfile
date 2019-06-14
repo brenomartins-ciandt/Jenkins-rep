@@ -19,8 +19,8 @@ pipeline {
                 sh 'pwd'
                 sh 'groupadd docker'
                 sh 'usermod -aG docker jenkins'
-                sh 'sudo service docker stop'
-                sh 'sudo service docker start'
+                sh 'service docker stop'
+                sh 'service docker start'
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
             }
