@@ -19,7 +19,8 @@ pipeline {
                 sh 'pwd'
                 sh 'ls'
                 sh 'whoami'
-                sh 'usermod -aG docker $USER'
+                sh 'echo $USER'
+                sh 'usermod -aG docker jenkins'
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
             }
