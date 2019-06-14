@@ -17,6 +17,8 @@ pipeline {
         stage ('Building application image'){
             steps {
                 sh 'pwd'
+                sh 'ls'
+                sh 'whoami'
                 sh 'usermod -aG docker jenkins'
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
@@ -24,7 +26,6 @@ pipeline {
         }
         stage ('Compose Up Stage'){                
             steps {
-                sh 'whoami'
                 sh 'docker-compose -f docker-compose.yml up -d'
                 sleep(5)
             }
