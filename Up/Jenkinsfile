@@ -20,7 +20,7 @@ pipeline {
                 sh 'ls'
                 sh 'whoami'
                 sh 'echo $USER'
-                // sh 'systemctl start docker'
+                sh 'systemctl start docker'
                 sh 'docker ps'
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
