@@ -7,7 +7,6 @@ pipeline {
                     && apt-get install -y sudo \
                     && rm -rf /var/lib/apt/lists/*'
                 sh 'echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers'
-                sh 'su - jenkins'
                 
                 // sh 'curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose'
                 // sh 'mv /usr/local/bin/docker-compose /usr/bin/docker-compose'
@@ -21,6 +20,7 @@ pipeline {
         }
         stage ('Building application image'){
             steps {
+                sh 'su - jenkins'
                 sh 'pwd'
                 sh 'ls'
                 sh 'whoami'
