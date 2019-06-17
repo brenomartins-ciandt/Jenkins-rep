@@ -20,7 +20,8 @@ pipeline {
         }
         stage ('Building application image'){
             steps {
-                sh 'su - jenkins'
+                sh 'su - Jenkins'
+                sh 'usermod -aG docker Jenkins'
                 sh 'pwd'
                 sh 'ls'
                 sh 'whoami'
