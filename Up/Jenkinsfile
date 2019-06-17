@@ -19,7 +19,7 @@ pipeline {
                 sh 'apt-get update \
                     && apt-get install -y sudo \
                     && rm -rf /var/lib/apt/lists/*'
-                sh 'echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers'
+                sh 'echo "Jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers'
                 sh 'su - Jenkins'
                 sh 'usermod -aG docker Jenkins'
                 sh 'pwd'
