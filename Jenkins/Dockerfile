@@ -1,4 +1,4 @@
-FROM jenkinsci/blueocean
+FROM jenkins/jenkins:lts
 
 USER root
 
@@ -6,4 +6,10 @@ RUN curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-17.04.0-ce.tgz
         && tar xzvf docker-17.04.0-ce.tgz \
         && mv docker/docker /usr/local/bin \
         && rm -r docker docker-17.04.0-ce.tgz
+
+RUN curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+        && mv /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+        
+
 
