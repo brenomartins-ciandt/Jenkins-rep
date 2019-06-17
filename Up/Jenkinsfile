@@ -21,7 +21,7 @@ pipeline {
                 sh 'whoami'
                 sh 'echo $USER'
                 // sh 'service jenkins restart'
-                // sh 'docker ps'
+                sh 'docker ps'
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
             }
