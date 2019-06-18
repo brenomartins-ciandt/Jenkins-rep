@@ -18,6 +18,7 @@ pipeline {
                 sh 'echo $USER'
                 sh 'chown root docker-compose.yml'
                 sh 'chmod 777 docker-compose.yml'
+                sh 'usermod -aG docker $USER'
                 sh 'docker-compose up -d'
                 sleep(5)
             }
