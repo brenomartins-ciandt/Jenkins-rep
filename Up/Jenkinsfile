@@ -14,8 +14,11 @@ pipeline {
         }
         stage ('Compose Up Stage'){                
             steps {
+                sh 'whoami'
+                sh 'echo $USER'
+                sh 'chown root docker-compose.yml'
                 sh 'chmod 777 docker-compose.yml'
-                sh 'docker-compose -f docker-compose.yml up -d'
+                sh 'docker-compose up -d'
                 sleep(5)
             }
         }
