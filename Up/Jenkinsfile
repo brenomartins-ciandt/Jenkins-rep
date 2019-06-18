@@ -10,7 +10,8 @@ pipeline {
         stage ('Compose Up Stage'){                
             steps {
                 sh 'docker-compose up -d'
-                sleep(5)
+                sleep(15)
+                sh 'docker ps'
             }
         }
         stage ('Setting BD'){
