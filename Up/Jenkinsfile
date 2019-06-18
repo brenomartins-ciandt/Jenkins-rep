@@ -3,20 +3,12 @@ pipeline {
 	stages {
         stage ('Building application image'){
             steps {
-                sh 'pwd'
-                sh 'ls'
-                sh 'whoami'
-                sh 'echo $USER'
-                sh 'docker ps'
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
             }
         }
         stage ('Compose Up Stage'){                
             steps {
-                sh 'whoami'
-                sh 'echo $USER'
-                sh 'chmod +x /usr/bin/docker-compose'
                 sh 'docker-compose up -d'
                 sleep(5)
             }
@@ -24,7 +16,7 @@ pipeline {
         stage ('Setting BD'){
             steps {
                 withCredentials ([string(credentialsId: 'senha', variable: 'SENHA')]){
-                    sh 'sudo PGPASSWORD=$SENHA psql    --host=localhost    --port=5555    --username=postgres --no-password  --file acesso_init.sql'
+                    sh 'PGPASSWORD=$SENHA psql    --host=localhost    --port=5555    --username=postgres --no-password  --file acesso_init.sql'
                 }
             }
         }
