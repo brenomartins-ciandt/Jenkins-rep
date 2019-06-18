@@ -17,7 +17,7 @@ pipeline {
             steps {
                 withCredentials ([string(credentialsId: 'senha', variable: 'SENHA')]){
                     sh 'PGPASSWORD=$SENHA' 
-                    sh 'psql    --host=localhost    --port=5555    --username=postgres --no-password  --file acesso_init.sql'
+                    sh 'psql    --host=postgres    --port=5555    --username=postgres --no-password  --file acesso_init.sql'
                 }
             }
         }
