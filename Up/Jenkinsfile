@@ -16,10 +16,7 @@ pipeline {
             steps {
                 sh 'whoami'
                 sh 'echo $USER'
-                sh 'chown root docker-compose.yml'
-                sh 'chmod 777 docker-compose.yml'
-                sh 'groupadd docker'
-                sh 'usermod -aG docker $USER'
+                sh 'chmod +x /usr/bin/docker-compose'
                 sh 'docker-compose up -d'
                 sleep(5)
             }
