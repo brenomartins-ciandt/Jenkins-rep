@@ -5,8 +5,6 @@ COPY acesso_init.sql .
 
 EXPOSE 9095
 
-RUN apt-get update && apt-get install python python-pip postgresql-client postgresql
-
 ENV PORT=5555
 ENV DATASOURCE_USERNAME=postgres
 ENV DATASOURCE_PASSWORD=postgres
