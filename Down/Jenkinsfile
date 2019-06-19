@@ -7,11 +7,11 @@ pipeline {
                 // sh 'pwd'
                 // sh 'docker network ls'
                 // sh 'docker-compose down'
-                sh 'docker network disconnect -f appnetwork application-up_aplication_1'
-                sh 'docker network disconnect -f appnetwork application-up_bd-postgres_1'
+                sh 'docker network disconnect -f appnetwork aplication-up_aplication_1 && \
+                    docker network disconnect -f appnetwork aplication-up_bd-postgres_1'
                 sh 'docker network rm appnetwork'
-                sh 'docker stop application-up_aplication_1 application-up_bd-postgres_1'
-                sh 'docker rm application-up_aplication_1 application-up_bd-postgres_1'
+                sh 'docker stop aplication-up_aplication_1 aplication-up_bd-postgres_1'
+                sh 'docker rm aplication-up_aplication_1 aplication-up_bd-postgres_1'
             }
         }
     }
