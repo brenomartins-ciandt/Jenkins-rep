@@ -10,7 +10,7 @@ services:
       - PORT=5432
       - DATASOURCE_USERNAME=postgres
       - DATASOURCE_PASSWORD=postgres
-      - HOST=172.17.1.2
+      - HOST=172.38.1.2
       - DBNAME=postgres
       - DATASOURCE_URL=jdbc:postgresql://172.38.1.2:5432/postgres
       ports:
