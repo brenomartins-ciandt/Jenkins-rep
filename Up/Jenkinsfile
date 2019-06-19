@@ -10,7 +10,7 @@ pipeline {
         stage ('Compose Up Stage'){                
             steps {
                 sh 'docker-compose up -d'
-                sleep(15)
+                sleep(7)
                 sh 'docker ps'
             }
         }
