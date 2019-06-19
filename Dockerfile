@@ -5,7 +5,6 @@ COPY acesso_init.sql .
 
 EXPOSE 9095
 
-
 ENTRYPOINT java \
 -Dspring.datasource.url=$DATASOURCE_URL \
 -Dspring.datasource.username=$DATASOURCE_USERNAME \
