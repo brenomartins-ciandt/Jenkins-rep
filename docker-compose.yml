@@ -3,9 +3,9 @@ version: '3.5'
 services:   
    aplication:
       image: aplic_java2
-      networks:
-         appnetwork:
-            ipv4_address: 172.38.1.1
+      # networks:
+      #    appnetwork:
+      #       ipv4_address: 172.38.1.1
       environment:
       - PORT=5432
       - DATASOURCE_USERNAME=postgres
@@ -20,18 +20,18 @@ services:
 
    bd-postgres:
       image: postgres
-      networks:
-         appnetwork:
-            ipv4_address: 172.38.1.2
+      # networks:
+      #    appnetwork:
+      #       ipv4_address: 172.38.1.2
       environment:
       - POSTGRES_PASSWORD=postgres
       ports:
       - "5555:5432"
 
-networks:
-   appnetwork:
-      name: appnetwork
-      ipam:
-         driver: default
-         config:
-            - subnet: 172.38.0.0/16
+# networks:
+#    appnetwork:
+#       name: appnetwork
+#       ipam:
+#          driver: default
+#          config:
+#             - subnet: 172.38.0.0/16
