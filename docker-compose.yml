@@ -15,7 +15,10 @@ services:
       - DATASOURCE_URL=jdbc:postgresql://172.38.1.2:5432/postgres
       ports:
       - "9094:9095"
+      command:  psql    --host=bd-postgres    --port=5432   --username=postgres --no-password  --file acesso_init.sql
       depends_on:
+      - bd-postgres
+      links:
       - bd-postgres
 
    bd-postgres:
