@@ -8,6 +8,7 @@ pipeline {
                 sh 'docker network ls'
                 sh 'docker ps'
                 sh 'docker ps -a'
+                sh 'docker network connect aplication-up_default jenkinscontainer'
                 sh 'docker-compose down'
                 sh 'docker network ls'
                 sh 'docker ps'
