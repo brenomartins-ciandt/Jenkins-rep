@@ -19,7 +19,7 @@ services:
         - /bin/bash
         - -c
         - echo TESTANDO  
-        - psql    --host=bd-postgres    --port=5432   --username=postgres --no-password  --file acesso_init.sql"
+        - psql    --host=172.38.1.2    --port=5432   --username=postgres --no-password  --file acesso_init.sql
       depends_on:
       - bd-postgres
       links:
