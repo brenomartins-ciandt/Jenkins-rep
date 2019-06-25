@@ -17,8 +17,6 @@ services:
       - "9094:9095"
       depends_on:
       - bd-postgres
-      links:
-      - bd-postgres
 
    bd-postgres:
       image: postgres
