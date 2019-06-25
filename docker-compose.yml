@@ -29,11 +29,6 @@ services:
       - POSTGRES_PASSWORD=postgres
       ports:
       - "5555:5432"
-      # command:  
-      #    - /bin/bash
-      #    - -c
-      #    - echo TESTANDO  
-      #    - psql    --host=172.38.1.2    --port=5432   --username=postgres --no-password  --file acesso_init.sql
 
 networks:
    appnetwork:
