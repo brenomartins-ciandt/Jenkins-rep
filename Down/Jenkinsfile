@@ -7,6 +7,7 @@ pipeline {
                 sh 'docker network ls'
                 sh 'docker ps'
                 sh 'docker ps -a'
+                sh 'docker network disconnect -f appnetwork jenkinscontainer'
                 sh 'docker network disconnect -f appnetwork aplication-up_aplication_1'
                 sh 'docker network disconnect -f appnetwork aplication-up_bd-postgres_1'
                 sh 'docker network ls'
