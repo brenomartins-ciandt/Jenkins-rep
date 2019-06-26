@@ -18,8 +18,8 @@ services:
 networks:
    jenkins_default:
       name: jenkins_default
-      # ipam:
-      #    driver: default
-      #    config:
-      #       - subnet: 172.38.0.0/16
+      ipam:
+         driver: default
+         config:
+            - subnet: 172.38.0.0/16
 
