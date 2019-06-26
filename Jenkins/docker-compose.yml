@@ -1,0 +1,22 @@
+version: '3.5'
+
+services: 
+  jenkinscontainer:
+    image: jenkinsnew
+  ports:
+  - "8080:8080"
+  - "50000:50000"
+  volumes:
+  - "/home/brenomartins/Jenkins:/var/jenkins_home"
+  - "/var/run/docker.sock:/var/run/docker.sock"
+  user: root
+#--rm
+
+networks:
+   appnetwork:
+      name: appnetwork
+      ipam:
+         driver: default
+         config:
+            - subnet: 172.38.0.0/16
+
