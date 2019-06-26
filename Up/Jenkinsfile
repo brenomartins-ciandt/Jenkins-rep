@@ -10,16 +10,12 @@ pipeline {
         stage ('Compose Up Stage'){                
             steps {
                 sh 'docker-compose up -d'
-                sleep(7)
-                sh 'docker ps'
+                sleep(5)
             }
         }
         stage ('Setting BD'){
             steps {
-                sh 'docker network connect --ip 172.38.1.3 appnetwork jenkinscontainer' //--name jenkinscontainer
-                sh 'pwd'
-                sh 'echo $USER'
-                sh 'whoami'
+                sh 'docker network connect --ip 172.38.1.3 appnetwork jenkinscontainer'
                 withCredentials ([string(credentialsId: 'senha', variable: 'PGPASSWORD')]){ 
                     sh 'psql    --host=172.38.1.2   --port=5432   --username=postgres --no-password  --file acesso_init.sql'
                 }
