@@ -5,10 +5,10 @@ services:
       image: jenkinsnew
       ports:
       - 8080:8080
+      - 50000:50000
       networks:
          jenkins_default:
             # ipv4_address: 172.38.1.3
-     #- "50000:50000"
       volumes: 
       - "/home/brenomartins/Jenkins:/var/jenkins_home"
       - "/var/run/docker.sock:/var/run/docker.sock"
