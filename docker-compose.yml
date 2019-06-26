@@ -5,13 +5,11 @@ services:
       image: aplic_java2
       networks:
          jenkins_default:
-            # ipv4_address: 172.38.1.1
       environment:
       - PORT=5432
       - DATASOURCE_USERNAME=postgres
       - DATASOURCE_PASSWORD=postgres
       - HOST=bd-postgres
-      # 172.38.1.2
       - DBNAME=postgres
       - DATASOURCE_URL=jdbc:postgresql://bd-postgres:5432/postgres
       ports:
@@ -23,7 +21,6 @@ services:
       image: postgres
       networks:
          jenkins_default:
-            # ipv4_address: 172.38.1.2
       environment:
       - POSTGRES_PASSWORD=postgres
       ports:
@@ -31,5 +28,5 @@ services:
 
 networks:
    jenkins_default:
-      # external: 
-      name: jenkins_default
+      external: 
+         name: jenkins_default
