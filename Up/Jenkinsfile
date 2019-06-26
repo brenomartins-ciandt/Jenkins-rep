@@ -21,5 +21,11 @@ pipeline {
                 }
             }
         }
+        stage ('Compose Down Stage'){                
+            steps {
+                sh 'docker network ls'
+                sh 'docker-compose down'
+            }
+        }
     }
 }
