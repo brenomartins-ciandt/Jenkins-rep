@@ -4,9 +4,10 @@ pipeline {
 	stages {
         stage ('Compose Stage'){
             steps {
-                sh 'cd Jenkins'
+                // sh 'cd Jenkins'
+                sh 'pwd'
                 sh 'docker network ls'
-                sh 'docker-compose down'
+                sh 'docker-compose down -f /Jenkins'
                 // sh 'docker network ls'
                 // sh 'docker ps'
                 // sh 'docker ps -a'
