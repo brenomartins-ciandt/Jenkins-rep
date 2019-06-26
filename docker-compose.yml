@@ -4,7 +4,7 @@ services:
    aplication:
       image: aplic_java2
       networks:
-         appnetwork:
+         jenkins_default:
             ipv4_address: 172.38.1.1
       environment:
       - PORT=5432
@@ -21,7 +21,7 @@ services:
    bd-postgres:
       image: postgres
       networks:
-         appnetwork:
+         jenkins_default:
             ipv4_address: 172.38.1.2
       environment:
       - POSTGRES_PASSWORD=postgres
@@ -29,6 +29,6 @@ services:
       - "5555:5432"
 
 networks:
-   appnetwork:
+   jenkins_default:
       external: 
-         name: appnetwork
+         name: jenkins_default

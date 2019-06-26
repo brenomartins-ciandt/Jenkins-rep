@@ -5,7 +5,7 @@ pipeline {
         stage ('Compose Stage'){
             steps {
                 sh 'docker network ls'
-                sh 'docker-compose down -v'
+                sh 'docker-compose down'
                 // sh 'docker network ls'
                 // sh 'docker ps'
                 // sh 'docker ps -a'
