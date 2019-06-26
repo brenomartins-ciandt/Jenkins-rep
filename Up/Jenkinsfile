@@ -9,6 +9,7 @@ pipeline {
         }
         stage ('Compose Up Stage'){                
             steps {
+                sh "docker network ls"
                 sh 'docker-compose up -d'
                 sleep(5)
             }
