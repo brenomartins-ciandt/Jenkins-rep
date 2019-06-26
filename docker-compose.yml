@@ -29,6 +29,6 @@ services:
       - "5555:5432"
 
 networks:
-   jenkins_default:
+   appnetwork:
       external: 
-         name: jenkins_default
+         name: appnetwork
