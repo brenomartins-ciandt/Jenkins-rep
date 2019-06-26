@@ -5,7 +5,7 @@ services:
     image: jenkinsnew
   ports:
   - "8080:8080"
-  - "50000:50000"
+  #- "50000:50000"
   volumes:
   - "/home/brenomartins/Jenkins:/var/jenkins_home"
   - "/var/run/docker.sock:/var/run/docker.sock"
