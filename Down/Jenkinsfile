@@ -4,21 +4,21 @@ pipeline {
 	stages {
         stage ('Compose Stage'){
             steps {
+                sh 'docker network ls'
+                sh 'docker-compose down'
                 // sh 'docker network ls'
-                // sh 'docker-compose down'
-                sh 'docker network ls'
-                sh 'docker ps'
-                sh 'docker ps -a'
-                sh 'docker network disconnect appnetwork jenkinscontainer'
-                sh 'docker network disconnect appnetwork aplication-up_aplication_1'
-                sh 'docker network disconnect appnetwork aplication-up_bd-postgres_1'
-                sh 'docker network ls'
-                sh 'docker network rm appnetwork'
-                sh 'docker stop aplication-up_aplication_1 aplication-up_bd-postgres_1'
-                sh 'docker rm aplication-up_aplication_1 aplication-up_bd-postgres_1'
-                sh 'docker network ls'
-                sh 'docker ps'
-                sh 'docker ps -a'
+                // sh 'docker ps'
+                // sh 'docker ps -a'
+                // sh 'docker network disconnect appnetwork jenkinscontainer'
+                // sh 'docker network disconnect appnetwork aplication-up_aplication_1'
+                // sh 'docker network disconnect appnetwork aplication-up_bd-postgres_1'
+                // sh 'docker network ls'
+                // sh 'docker network rm appnetwork'
+                // sh 'docker stop aplication-up_aplication_1 aplication-up_bd-postgres_1'
+                // sh 'docker rm aplication-up_aplication_1 aplication-up_bd-postgres_1'
+                // sh 'docker network ls'
+                // sh 'docker ps'
+                // sh 'docker ps -a'
             }
         }
     }
