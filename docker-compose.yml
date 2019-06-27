@@ -28,5 +28,4 @@ services:
 
 networks:
    jenkins_default:
-   # external: 
       name: jenkins_default

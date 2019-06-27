@@ -6,8 +6,8 @@ services:
       ports:
       - 8080:8080
       - 50000:50000
-      # networks:
-      #    jenkins_default:
+      networks:
+         jenkins_default:
       volumes: 
       - "/home/brenomartins/Jenkins:/var/jenkins_home"
       - "/var/run/docker.sock:/var/run/docker.sock"
@@ -16,5 +16,5 @@ services:
 
 networks:
    jenkins_default:
-      name: jenkins_default
+      name: netjenkins
 
