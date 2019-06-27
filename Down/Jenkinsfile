@@ -14,7 +14,7 @@ pipeline {
                 sh 'docker network disconnect netjenkins aplication-up_aplication_1'
                 sh 'docker network disconnect netjenkins aplication-up_bd-postgres_1'
                 sh 'docker network ls'
-                sh 'docker network rm netjenkins'
+               // sh 'docker network rm netjenkins'
                 sh 'docker stop aplication-up_aplication_1 aplication-up_bd-postgres_1'
                 sh 'docker rm aplication-up_aplication_1 aplication-up_bd-postgres_1'
                 sh 'docker network ls'
