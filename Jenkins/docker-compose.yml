@@ -12,7 +12,6 @@ services:
       - "/home/brenomartins/Jenkins:/var/jenkins_home"
       - "/var/run/docker.sock:/var/run/docker.sock"
       user: root
-#--rm
 
 networks:
    jenkins_default:
