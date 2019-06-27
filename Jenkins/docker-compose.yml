@@ -16,5 +16,5 @@ services:
 
 networks:
    jenkins_default:
-      name: jenkins_default
+      name: netjenkins
 
