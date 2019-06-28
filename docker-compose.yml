@@ -4,7 +4,7 @@ services:
    aplication:
       image: aplic_java2
       networks:
-         jenkins_default:
+         default:
       environment:
       - PORT=5432
       - DATASOURCE_USERNAME=postgres
@@ -20,12 +20,12 @@ services:
    bd-postgres:
       image: postgres
       networks:
-         jenkins_default:
+         default:
       environment:
       - POSTGRES_PASSWORD=postgres
       ports:
       - "5555:5432"
 
 networks:
-   jenkins_default:
+   default:
       name: netjenkins
