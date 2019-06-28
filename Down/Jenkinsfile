@@ -4,10 +4,11 @@ pipeline {
 	stages {
         stage ('Compose Stage'){
             steps {
-                sh 'docker ps'
-                sh 'docker stop aplication-up_aplication_1 aplication-up_bd-postgres_1'
-                sh 'docker rm aplication-up_aplication_1 aplication-up_bd-postgres_1'
-                sh 'docker ps -a'
+                sh 'docker-compose --project-directory /var/jenkins_home/workspace/Aplication-Up down'
+                // sh 'docker ps'
+                // sh 'docker stop aplication-up_aplication_1 aplication-up_bd-postgres_1'
+                // sh 'docker rm aplication-up_aplication_1 aplication-up_bd-postgres_1'
+                // sh 'docker ps -a'
             }
         }
     }
