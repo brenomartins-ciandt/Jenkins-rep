@@ -16,6 +16,7 @@ pipeline {
 
         stage ('Application Up Stage'){                
             steps {
+                sh 'pwd'
                 sh 'docker-compose up -d'
                 sleep(5)
             }
