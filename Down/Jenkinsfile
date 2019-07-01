@@ -5,10 +5,7 @@ pipeline {
         stage ('Application Down Stage'){
             steps {
                 sh 'docker ps'
-                sh 'docker-compose --project-directory /var/jenkins_home/workspace/Aplication-Up down'
-                // sh 'docker-compose down'
-                // sh 'docker stop application postgres'
-                // sh 'docker rm application postgres'
+                sh 'docker-compose -p AplicationJava down'
                 sh 'docker ps -a'
             }
         }
