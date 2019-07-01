@@ -3,7 +3,7 @@ version: '3.5'
 services:   
    aplication:
       image: aplic_java2
-      container_name: aplication
+      container_name: application
       networks:
          default:
       environment:
