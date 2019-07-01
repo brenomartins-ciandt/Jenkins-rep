@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:   
+   sonar:
+      image: sonarqube
+      container_name: sonarqube
+      networks:
+         default:
+      environment:
+      - Dspring.datasource.url=jdbc:postgresql://bd-postgres:5432/postgres
+      - Dspring.datasource.username=postgres
+      - Dspring.datasource.password=postgres
+      ports:
+      - "9000:9000"

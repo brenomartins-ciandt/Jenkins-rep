@@ -7,13 +7,11 @@ pipeline {
 
             }
         }
-
-        // stage ('Sonar Stage'){
-        //     steps {
-        //         sh 'docker-compose -f up -d'
-        //     }
-        // }
-
+        stage ('Sonar Stage'){
+            steps {
+                sh 'docker-compose -f Sonar/docker-compose up -d'
+            }
+        }
         stage ('Application Up Stage'){                
             steps {
                 sh 'pwd'
