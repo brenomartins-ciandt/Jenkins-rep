@@ -2,7 +2,7 @@ pipeline {
     agent any
     
 	stages {
-        stage ('Compose Stage'){
+        stage ('Application Down Stage'){
             steps {
                 // sh 'docker-compose --project-directory /var/jenkins_home/workspace/Aplication-Up down'
                 // sh 'docker-compose down'

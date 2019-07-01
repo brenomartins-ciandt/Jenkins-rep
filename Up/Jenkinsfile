@@ -1,19 +1,26 @@
 pipeline {
     agent any
 	stages {
-        stage ('Building application image'){
+        stage ('Creating Containers Stage'){
             steps {
                 sh 'docker build -t aplic_java2 -f Dockerfile .'
 
             }
         }
-        stage ('Compose Up Stage'){                
+
+        // stage ('Sonar Stage'){
+        //     steps {
+        //         sh 'docker-compose -f up -d'
+        //     }
+        // }
+
+        stage ('Application Up Stage'){                
             steps {
                 sh 'docker-compose up -d'
                 sleep(5)
             }
         }
-        stage ('Setting BD'){
+        stage ('Database Stage'){
             steps {
                 withCredentials ([string(credentialsId: 'senha', variable: 'PGPASSWORD')]){ 
                     sh 'psql    --host=bd-postgres   --port=5432   --username=postgres --no-password  --file acesso_init.sql'
