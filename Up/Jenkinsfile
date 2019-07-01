@@ -14,7 +14,7 @@ pipeline {
         }
         stage ('Application Up Stage'){                
             steps {
-                sh 'docker-compose up -p AplicationJava -d'
+                sh 'docker-compose -p AplicationJava up -d'
                 sleep(5)
             }
         }
