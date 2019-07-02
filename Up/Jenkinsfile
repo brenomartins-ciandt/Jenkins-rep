@@ -9,7 +9,7 @@ pipeline {
         }
         stage ('Sonar Stage'){
             steps {
-                sh 'docker-compose -f Sonar/docker-compose.yml up -d'
+                sh 'cd Sonar/complete && mvn sonar:sonar'
             }
         }
         stage ('Application Up Stage'){                
