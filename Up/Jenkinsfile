@@ -7,16 +7,15 @@ pipeline {
 
             }
         }
-        stage ('Sonar Stage'){
-            steps {
-                sh 'cd Sonar/complete && pwd && ls && mvn sonar:sonar'
-                // -Dspring.datasource.url=http://172.17.0.2:9000
-            }
-        }
         stage ('Application Up Stage'){                
             steps {
                 sh 'docker-compose -p AplicationJava up -d'
                 sleep(5)
+            }
+        }
+        stage ('Sonar Stage'){
+            steps {
+                sh 'cd Sonar/complete && pwd && ls && mvn sonar:sonar -sonar.jdbc.url=http://172.17.0.2:9000'
             }
         }
         stage ('Database Stage'){

@@ -6,9 +6,15 @@ services:
       container_name: sonarqube
       networks:
          default:
+
       environment:
-      - Dspring.datasource.url=jdbc:postgresql://bd-postgres:5432/postgres
-      - Dspring.datasource.username=postgres
-      - Dspring.datasource.password=postgres
+      - sonar.jdbc.url=jdbc:postgresql://bd-postgres:5432/postgres
+      - sonar.jdbc.username=postgres
+      - sonar.jdbc.password=sonar=postgres
       ports:
       - "9000:9000"
+
+networks:
+   default:
+      external: 
+         name: netjenkins
