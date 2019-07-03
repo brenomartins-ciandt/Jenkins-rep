@@ -9,7 +9,8 @@ pipeline {
         }
         stage ('Sonar Stage'){
             steps {
-                sh 'cd Sonar/complete && mvn sonar:sonar -Dspring.datasource.url=http://172.17.0.2:9000'
+                sh 'cd Sonar/complete && mvn sonar:sonar'
+                // -Dspring.datasource.url=http://172.17.0.2:9000
             }
         }
         stage ('Application Up Stage'){                
