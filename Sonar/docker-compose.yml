@@ -8,9 +8,9 @@ services:
          default:
 
       environment:
-      - sonar.jdbc.url=jdbc:postgresql://bd-postgres:5432/postgres
-      - sonar.jdbc.username=postgres
-      - sonar.jdbc.password=sonar=postgres
+      - Dspring.datasource.url=jdbc:postgresql://bd-postgres:5432/postgres
+      - Dspring.datasource.username=postgres
+      - Dspring.datasource.password=postgres
       ports:
       - "9000:9000"
 

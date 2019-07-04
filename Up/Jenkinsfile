@@ -16,7 +16,7 @@ pipeline {
         stage ('Sonar Stage'){
             steps {
                 sh 'cd Sonar/complete && mvn sonar:sonar'
-                // -Dsonar.jdbc.url=http://127.0.0.1:9000'
+ // -Dsonar.jdbc.url=http://127.0.0.1:9000'
             }
         }
         stage ('Database Stage'){
