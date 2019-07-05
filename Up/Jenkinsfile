@@ -13,17 +13,17 @@ pipeline {
                 sleep(5)
             }
         }
-        stage ('Sonar Stage'){
-            steps {
-                sh 'cd Sonar/complete && mvn sonar:sonar'
- // -Dsonar.jdbc.url=http://127.0.0.1:9000'
-            }
-        }
         stage ('Database Stage'){
             steps {
                 withCredentials ([string(credentialsId: 'senha', variable: 'PGPASSWORD')]){ 
                     sh 'psql    --host=bd-postgres   --port=5432   --username=postgres --no-password  --file acesso_init.sql'
                 }
+            }
+        }
+        stage ('Sonar Stage'){
+            steps {
+                sh 'cd Sonar/complete && mvn sonar:sonar'
+ // -Dsonar.jdbc.url=http://127.0.0.1:9000'
             }
         }
     }
