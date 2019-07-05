@@ -22,8 +22,7 @@ pipeline {
         }
         stage ('Sonar Stage'){
             steps {
-                sh 'cd Sonar/complete && docker-compose up -d && mvn sonar:sonar '
-                // -Dspring.datasource.url=http://127.0.0.1:9000'
+                sh 'cd Sonar/complete && docker-compose up -d && mvn sonar:sonar --Dsonar.host.url=http://127.0.0.1:5432'
             }
         }
     }
