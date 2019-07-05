@@ -12,7 +12,7 @@ services:
       - DATASOURCE_PASSWORD=postgres
       - HOST=bd-postgres
       - DBNAME=postgres
-      - DATASOURCE_URL=jdbc:postgresql://bd-postgres:5555/postgres
+      - DATASOURCE_URL=jdbc:postgresql://bd-postgres:5432/postgres
       ports:
       - "9094:9095"
       depends_on:
