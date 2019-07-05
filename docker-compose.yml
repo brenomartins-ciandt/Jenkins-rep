@@ -7,12 +7,12 @@ services:
       networks:
          default:
       environment:
-      - PORT=5432
+      - PORT=5555
       - DATASOURCE_USERNAME=postgres
       - DATASOURCE_PASSWORD=postgres
       - HOST=bd-postgres
       - DBNAME=postgres
-      - DATASOURCE_URL=jdbc:postgresql://bd-postgres:5432/postgres
+      - DATASOURCE_URL=jdbc:postgresql://bd-postgres:5555/postgres
       ports:
       - "9094:9095"
       depends_on:
@@ -26,7 +26,7 @@ services:
       environment:
       - POSTGRES_PASSWORD=postgres
       ports:
-      - "5555:5432"
+      - "5555:5555"
 
 networks:
    default:

@@ -16,13 +16,14 @@ pipeline {
         stage ('Database Stage'){
             steps {
                 withCredentials ([string(credentialsId: 'senha', variable: 'PGPASSWORD')]){ 
-                    sh 'psql    --host=bd-postgres   --port=5432   --username=postgres --no-password  --file acesso_init.sql'
+                    sh 'psql    --host=bd-postgres   --port=5555   --username=postgres --no-password  --file acesso_init.sql'
                 }
             }
         }
         stage ('Sonar Stage'){
             steps {
-                sh 'cd Sonar/complete && docker-compose up -d && mvn sonar:sonar -Dspring.datasource.url=http://127.0.0.1:9000'
+                sh 'cd Sonar/complete && docker-compose up -d && mvn sonar:sonar '
+                // -Dspring.datasource.url=http://127.0.0.1:9000'
             }
         }
     }
